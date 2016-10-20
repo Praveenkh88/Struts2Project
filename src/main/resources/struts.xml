@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<package name="default" namespace="/" extends="struts-default">
+<action name="login" class="com.user.action.LoginAction">
+<result name="login">view/insertuser.jsp</result>
+</action>
+<action name="getUser" class="com.user.action.UserAction">
+<result name="executed">index.jsp</result>
+<result name="input">view/view.jsp</result>
+</action>
+<action name="insertUser" class="com.user.action.UserAction" method="createUser">
+<result name="userdetails">view/success.jsp</result>
+<result name="input">view/view.jsp</result>
+</action>
+<action name="getUserDetails" class="com.user.action.UserAction" method="getUserDetails">
+<result name="userpage">view/success.jsp</result>
+</action>
+</package>
+
+<package name="book" namespace="/book" extends="struts-default">
+<action name="book" class="com.book.action.BookAction" >
+<result name="books">insertbooks.jsp</result>
+</action>
+<action name="insertBooks" class="com.book.action.AddBookAction">
+<result name="bookdetails">success.jsp</result>
+</action>
+</package>
+
+
+
+</struts>
